@@ -1,0 +1,144 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="LogoutFromSuccessFactors" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="LogoutFromSuccessFactors_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Core.Activities.Storage</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="LogoutFromSuccessFactors" sap:VirtualizedContainerService.HintSize="800.0000000000001,765.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: SuccessFactors: Home" sap:VirtualizedContainerService.HintSize="449.6,742.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="cef792c2-04a8-44e7-9d98-7fbf269d96c4" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,502.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'BDI'" sap:VirtualizedContainerService.HintSize="382.4,225.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cef792c2-04a8-44e7-9d98-7fbf269d96c4" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://hcm44preview.sapsf.com/sf/home?&amp;_s.crb=aY22PeU6cdcIAwhYJAGUnKL8f4JMx4eq1InqhQAuZeI%3d" CVScreenId="d2628e14-d480-4f3e-908c-245294b6c34d" CvElementArea="1820, 128, 44, 42" CvType="Icon" DesignTimeRectangle="1822, 130, 40, 40" DesignTimeScaleFactor="1.25" FuzzySelectorArgument="&lt;webctrl tag='XWEB-SHELLBAR' /&gt;&lt;webctrl id='shellbar' shadowhostid='' tag='UI5-SHELLBAR-SF-HEADER' /&gt;&lt;webctrl shadowhostid='shellbar' tag='UI5-BUTTON-SF-HEADER' /&gt;&lt;webctrl shadowhostid='ui5wc_1-item-3' tag='BDI' type='' class='' aaname='' /&gt;" Guid="cae3bf2f-ce46-476c-b98f-b59e60021885" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAQqSURBVFhH7Vj9SxRBGO6f7JekX6IPyKBPTEkNCrUyLTNDzdSKJLM0NMUS09JKyz5UMMVM0ZLO87zzW8x822fWHXfX93Zn7vRC6IGHg513Zp6bnfdr99Auw3/BO424Ba+u/qbFpWUKR+YoNBOh4HSYpqZnNhgWzyKz88IGtvEiJsFra2u0sLhE06EwBUMRU1zQFBkIhqTgwMYzi7ANGnMwF2vEAi3Bf9bXaW5h0ThFCLCfpDqtucHQjFgLa+pAWfDyygpNGaeDTd0nFwsD4tdYz1gTa6tCSfDc/IJ4ldZr31Yaa+KqYA8V+AoOz86Ju8puto3EHnBcP3gKxgK4a9wGO0HshQPyQlTBeEWJOFk3safX9WAFwwlkuPoHhL9Ec8QtghFmRDTQdLDJQJBedHygmsZ2ul/XQvUtb6jjfS9r60vsbWjgQt4WwYiNujF2cHiMzl4upb3JF7YQf4Cbo0JoccMhGNkHF9+MkWrsH/zuEHgk/TqdyS6mpJM58lluSTU714uI9Ugy7ozoEIyUqXu6KZfMkz12/gY1tXfL50Mj43Tz3lMpuvXtJ8c8NZpp3A6HYFx2M3Wq8dvYDymos6ePtckrqxHjBeVP2HE/ImrYIQWjktKNDB/7h4QYnC43DsL5YHM0o4Ad9yM02as8KRjlHzfBizqCcbe5cRVCmwUpGDUrZ+xF+5Xo/TrC2hRW1onx3NJH7LgvDeezp2wpGIU2O8GH6VfLhSA43+jEpGPs2ct38g81tnU5xnQIbRakYHhkLGUjwtq+41lCFH7hZCVVDZR5rVKKLatuYueqEA0BuhgLNsH8BD92fx6gnFtVUpybh9Py6WFDGztXhxbiElxR00xJJ7KluIOpeXQ6q5jO5d6h5MwC2n9qM3lk5FfQwPAou44KLUjBOHZ7P+bH2ubXUsyJi0X0qusLa1f8oEHapV65TROTAdYuGs1rylwJHafrs6XjIiObcTZuWvaFd+vYcS+yTofQoVqhoRrD5jrJoPZ5h5hzKC2PxjVPGSHXghSskzisykzXmQ6k5Ip5LUYZyo1HI5s4VFMz7iA2BREhOJtotEIdnJUb5xg1NQMqLRGKHEtwZ0+/FisfN4t5iCLc2m6iEENBZodDsEp5aRccK1UF+5aXooA3DL0y3vjPXyLWckJUWVXfyq5tJ5oINBOeBTxgtkj8Ioml0T37tUhArE3othJ7GxqUmlDAbPP1WqXtJCKDcptvYVd9SLGAz0YJ/1Tl833NUzCABRJx0tjD77sa4CsYwCsSWXAnHNFYE/7idQ3sUBIMwAlE9EAZym2sSRnrjTWjORgHZcEAwgxio3mv9b5hOGnOxVpc6PKClmALyD5ImeLDi6tgsmdJ2RBsPIMt7irmujOYKmISbAcqKZR/qFnNJmDTQdHF4BkcFzb2qitWxC04sSD6Cw4QOr44A+IWAAAAAElFTkSuQmCC" InformativeScreenshot="f43d9c3c118a42b9beeafc7674d6b160.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SuccessFactors: Home' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Log Out'" sap:VirtualizedContainerService.HintSize="382.4,216.8" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cef792c2-04a8-44e7-9d98-7fbf269d96c4" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://hcm44preview.sapsf.com/sf/home?&amp;_s.crb=aY22PeU6cdcIAwhYJAGUnKL8f4JMx4eq1InqhQAuZeI%3d" CVScreenId="16753240-2445-4980-94bd-41704fdf0cc4" CvTextArea="1654, 404, 63, 20" CvTextArgument="Log Out" CvType="Text" DesignTimeRectangle="1605, 392, 311, 41" DesignTimeScaleFactor="1.25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='UI5-STATIC-AREA-ITEM-SF-HEADER' /&gt;&lt;webctrl aaname='Log Out' class='menuItemSpace' parentid='popover' shadowhostid='' tag='DIV' type='' check:innerText='Log Out' /&gt;" Guid="26a0433d-17ce-4888-8264-de9f3ca72716" InformativeScreenshot="43796b76874259c814f050138b867436.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SuccessFactors: Home' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="16753240-2445-4980-94bd-41704fdf0cc4" CvTextArea="1654, 404, 63, 20" CvTextArgument="Log Out" CvType="Text" DesignTimeRectangle="1654, 403, 63, 21" ElementType="Text" Guid="25b86d1a-852a-4f0b-b54b-a1701cd9f7c7" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAALEgAACxIB0t1+/AAAAapJREFUOE/Nj09Ik2Ecx92QRlvkJnXQg2x1KJEFQtBBWVpEIIIR1aGL5/6g127roh20UFqQTkO0iAiCUJEOHjI7ZIJFJ42xd841h7D25xXn69yn523PdMspwi594Lk8z/f7+f2eMkrkPxTEkhlmv23x46cmb+D7ksrM/G+UXxvyZpcCwesPaRzXktgurWG9GORO1yot93wcv/CFY+c/Uu2aZuz9skxn2REEwtvY2+LYLkexNq9idSlUNC5iuenDdDeI+cpXLPVTVDVMEEvsbrcjmJxNYWuOYG0KU+dWOfV0C5Nnk7JXYPCKYB+YWuexnHvH+PSKbOUJPi2kxNoBatojOL1pKrs1DG8yGEZF6LmQPIHyjjBm51tm5iKylSfQcd7wc/J6gBOPNEwPNjC+FIIXIuQRgl5dEKL26rhMZykQBMIadbcWOdqZEEflyEMhGRTlfnF64MztzyghVaazFAh0lGiGs+51zPeTGAfEBs9E+TE4hMgfk6E89gh0lLVtTg+nMeh/F9P/luPy8R+KCnT8CbCPiPJQ8ck59hXo6FP3m5zjQMFhKFEAfwAzf4nPWFmz2QAAAABJRU5ErkJggg==" InformativeScreenshot="189983f8d3495114588a255301b04705.jpg" Selector="&lt;html app='chrome.exe' title='SuccessFactors: Home' /&gt;" Title="SuccessFactors: Home" Url="https://hcm44preview.sapsf.com/sf/home?&amp;_s.crb=aY22PeU6cdcIAwhYJAGUnKL8f4JMx4eq1InqhQAuZeI%3d" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
