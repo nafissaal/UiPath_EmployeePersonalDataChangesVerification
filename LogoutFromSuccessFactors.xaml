@@ -79,19 +79,19 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="LogoutFromSuccessFactors" sap:VirtualizedContainerService.HintSize="800.0000000000001,765.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="LogoutFromSuccessFactors" sap:VirtualizedContainerService.HintSize="826.4000000000001,768.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: SuccessFactors: Home" sap:VirtualizedContainerService.HintSize="449.6,742.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="cef792c2-04a8-44e7-9d98-7fbf269d96c4" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: SuccessFactors: Home" sap:VirtualizedContainerService.HintSize="449.6,745.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="cef792c2-04a8-44e7-9d98-7fbf269d96c4" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,502.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,505.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -112,11 +112,11 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Log Out'" sap:VirtualizedContainerService.HintSize="382.4,216.8" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cef792c2-04a8-44e7-9d98-7fbf269d96c4" Version="V4">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Log Out'" sap:VirtualizedContainerService.HintSize="382.4,218.4" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cef792c2-04a8-44e7-9d98-7fbf269d96c4" Version="V4">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://hcm44preview.sapsf.com/sf/home?&amp;_s.crb=aY22PeU6cdcIAwhYJAGUnKL8f4JMx4eq1InqhQAuZeI%3d" CVScreenId="16753240-2445-4980-94bd-41704fdf0cc4" CvTextArea="1654, 404, 63, 20" CvTextArgument="Log Out" CvType="Text" DesignTimeRectangle="1605, 392, 311, 41" DesignTimeScaleFactor="1.25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='UI5-STATIC-AREA-ITEM-SF-HEADER' /&gt;&lt;webctrl aaname='Log Out' class='menuItemSpace' parentid='popover' shadowhostid='' tag='DIV' type='' check:innerText='Log Out' /&gt;" Guid="26a0433d-17ce-4888-8264-de9f3ca72716" InformativeScreenshot="43796b76874259c814f050138b867436.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SuccessFactors: Home' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target CVScreenId="16753240-2445-4980-94bd-41704fdf0cc4" CvTextArea="1654, 404, 63, 20" CvTextArgument="Log Out" CvType="Text" DesignTimeRectangle="1654, 403, 63, 21" ElementType="Text" Guid="25b86d1a-852a-4f0b-b54b-a1701cd9f7c7" SearchSteps="CV" TargetType="ComputerVisionBased" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
