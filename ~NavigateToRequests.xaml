@@ -109,6 +109,7 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>GlobalVariablesT1PNoYwrqg</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="NavigateAndExtractInformation" sap:VirtualizedContainerService.HintSize="1276,2898" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -136,7 +137,7 @@
             </sap:WorkflowViewStateService.ViewState>
             <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="1" DisplayName="Click 'View All'" sap:VirtualizedContainerService.HintSize="480,225" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="09f464d9-5c35-4419-a459-65cd40b2b0b2" Version="V4">
               <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://hcm44preview.sapsf.com/sf/home?&amp;_s.crb=Bev4ACnzYM5mVOItgZmx8c4YXGco8A166ZNOh6NNSTI%3d" CVScreenId="2fc85975-a4bd-40cf-b619-25856a9124dd" CvTextArea="97, 974, 89, 20" CvTextArgument="View All (3)" CvType="Text" DesignTimeRectangle="100, 973, 87, 21" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='View All (3)' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='View All (3)' tag='DIV' type='' class='CardFooter_buttonText__X1kV4' check:innerText='View All (3)' /&gt;" Guid="532251f4-3349-41df-b51f-008c1bc1d710" InformativeScreenshot="5d76fa9e7cda6c3dc7e632a66c6af82e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SuccessFactors: Home' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                <uix:TargetAnchorable BrowserURL="https://hcm44preview.sapsf.com/sf/home?&amp;_s.crb=Bev4ACnzYM5mVOItgZmx8c4YXGco8A166ZNOh6NNSTI%3d" CVScreenId="2fc85975-a4bd-40cf-b619-25856a9124dd" CvTextArea="97, 974, 89, 20" CvTextArgument="View All" CvType="Text" DesignTimeRectangle="79, 804, 51, 13" DesignTimeScaleFactor="1" ElementType="Text" Guid="532251f4-3349-41df-b51f-008c1bc1d710" ImageBase64="" InformativeScreenshot="133c2f5b833afaac8868bd5bb24663f8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SuccessFactors: Home' /&gt;" SearchSteps="CV" Version="V4" Visibility="Interactive" />
               </uix:NClick.Target>
               <uix:NClick.VerifyOptions>
                 <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
@@ -201,9 +202,9 @@
                       </uix:NClick.VerifyOptions>
                     </uix:NClick>
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Done klik Home Page&quot;]" />
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="1" DisplayName="Click 'View All'" sap:VirtualizedContainerService.HintSize="382,225" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="09f464d9-5c35-4419-a459-65cd40b2b0b2" Version="V4">
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="1" DisplayName="Click 'View All'" sap:VirtualizedContainerService.HintSize="382,225" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="09f464d9-5c35-4419-a459-65cd40b2b0b2" Version="V4">
                       <uix:NClick.Target>
-                        <uix:TargetAnchorable BrowserURL="https://hcm44preview.sapsf.com/sf/home?&amp;_s.crb=Bev4ACnzYM5mVOItgZmx8c4YXGco8A166ZNOh6NNSTI%3d" CVScreenId="2fc85975-a4bd-40cf-b619-25856a9124dd" CvTextArea="97, 974, 89, 20" CvTextArgument="View All (3)" CvType="Text" DesignTimeRectangle="100, 973, 87, 21" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='View All (3)' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='View All (3)' tag='DIV' type='' class='CardFooter_buttonText__X1kV4' check:innerText='View All (3)' /&gt;" Guid="532251f4-3349-41df-b51f-008c1bc1d710" InformativeScreenshot="5d76fa9e7cda6c3dc7e632a66c6af82e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SuccessFactors: Home' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                        <uix:TargetAnchorable BrowserURL="https://hcm44preview.sapsf.com/sf/home?&amp;_s.crb=Bev4ACnzYM5mVOItgZmx8c4YXGco8A166ZNOh6NNSTI%3d" CVScreenId="2fc85975-a4bd-40cf-b619-25856a9124dd" CvTextArea="97, 974, 89, 20" CvTextArgument="View All" CvType="Text" DesignTimeRectangle="79, 804, 51, 13" DesignTimeScaleFactor="1" ElementType="Text" Guid="532251f4-3349-41df-b51f-008c1bc1d710" ImageBase64="" InformativeScreenshot="133c2f5b833afaac8868bd5bb24663f8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SuccessFactors: Home' /&gt;" SearchSteps="CV" Version="V4" Visibility="Interactive" />
                       </uix:NClick.Target>
                       <uix:NClick.VerifyOptions>
                         <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
