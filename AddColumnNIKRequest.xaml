@@ -93,7 +93,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AddAndCompareExcelData" sap:VirtualizedContainerService.HintSize="826.4000000000001,996" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AddAndCompareExcelData" sap:VirtualizedContainerService.HintSize="826.4000000000001,1196" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_SFRequests" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_KTPExcel" />
@@ -105,8 +105,20 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_SFRequests]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="433.6,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Data" WorkbookPath="[String.Format(&quot;SFRequestDataExcel\SFRequestData{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]" />
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_KTPExcel]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="433.6,120" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="KTP" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]" />
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" sap2010:Annotation.AnnotationText="Read the SFRequestDataExcel file." DataTable="[dt_SFRequests]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="433.6,151.2" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Data" WorkbookPath="[String.Format(&quot;SFRequestDataExcel\SFRequestData{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ReadRange>
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" sap2010:Annotation.AnnotationText="Read the ExtractionResultExcel file." DataTable="[dt_KTPExcel]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="433.6,151.2" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="KTP" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ReadRange>
     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="433.6,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_4">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,271.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
@@ -125,7 +137,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Assign sap:VirtualizedContainerService.HintSize="433.6,115.2" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap2010:Annotation.AnnotationText="Assign the new NIK in the extracted data from the SuccessFactors website to the 'dt_NewNIK' variable." sap:VirtualizedContainerService.HintSize="433.6,159.2" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[dt_NewNIK]</OutArgument>
       </Assign.To>
@@ -135,8 +147,13 @@
  Let newNIK = NIK.Split({" "c, vbTab(0), vbLf(0), vbCr(0)}, StringSplitOptions.RemoveEmptyEntries)(0)
  Select dt_KTPExcel.LoadDataRow(New Object() {newNIK}, False)).CopyToDataTable()]</InArgument>
       </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:FilterDataTable DataTable="[dt_NewNIK]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="433.6,194.4" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_NewNIK]" SelectColumnsMode="Keep">
+    <ui:FilterDataTable sap2010:Annotation.AnnotationText="Only keep the NIK column." DataTable="[dt_NewNIK]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="433.6,225.6" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_NewNIK]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
@@ -147,16 +164,32 @@
           <InArgument x:TypeArguments="x:String">["NIK"]</InArgument>
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:FilterDataTable>
-    <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap2010:Annotation.AnnotationText="Assign &quot;NIK Request' as the name of the column." sap:VirtualizedContainerService.HintSize="433.6,144.8" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[dt_NewNIK.Columns(0).ColumnName]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:String">NIK Request</InArgument>
       </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:WriteRange AddHeaders="True" DataTable="[dt_NewNIK]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="433.6,148" sap2010:WorkflowViewState.IdRef="WriteRange_3" SheetName="KTP" StartingCell="Q1" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]" />
+    <ui:WriteRange AddHeaders="True" sap2010:Annotation.AnnotationText="Write the data table in Excel." DataTable="[dt_NewNIK]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="433.6,179.2" sap2010:WorkflowViewState.IdRef="WriteRange_3" SheetName="KTP" StartingCell="Q1" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:WriteRange>
     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="433.6,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,164" sap2010:WorkflowViewState.IdRef="Sequence_3">

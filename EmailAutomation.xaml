@@ -228,7 +228,7 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1276,2060" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="826.4000000000001,2073.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_submission" />
     </Sequence.Variables>
@@ -237,52 +237,52 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="590,203" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="587.2,203.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_submission]" DisplayName="Read range from Excel sheet and store in DataTable" sap:VirtualizedContainerService.HintSize="416,111" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="KTP" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]" />
+      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_submission]" DisplayName="Read range from Excel sheet and store in DataTable" sap:VirtualizedContainerService.HintSize="416,111.2" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="KTP" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]" />
     </Sequence>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_submission]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="590,1834" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_submission]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="587.2,1847.2" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="556,1647" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="553.6,1658.4" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[CurrentRow(&quot;Keterangan&quot;).ToString = &quot;Approved&quot;]" sap:VirtualizedContainerService.HintSize="522,1587" sap2010:WorkflowViewState.IdRef="If_3">
+            <If Condition="[CurrentRow(&quot;Keterangan&quot;).ToString = &quot;Approved&quot;]" sap:VirtualizedContainerService.HintSize="520,1598.4" sap2010:WorkflowViewState.IdRef="If_3">
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="488,713" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486.4,718.4" sap2010:WorkflowViewState.IdRef="Sequence_14">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="454,653" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="452.8,658.4" sap2010:WorkflowViewState.IdRef="TryCatch_5">
                     <TryCatch.Try>
-                      <Sequence sap:VirtualizedContainerService.HintSize="416,402" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                      <Sequence sap:VirtualizedContainerService.HintSize="416,404" sap2010:WorkflowViewState.IdRef="Sequence_16">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Account="asus_1331b@outlook.com" Body="[&quot;Dear HR,&#xA;&#xA;We are pleased to inform you that the personal data change request submitted by employee &quot; + CurrentRow(&quot;Nama&quot;).ToString + &quot; has been &quot; + CurrentRow(&quot;Keterangan&quot;).ToString + &quot;&#xA;&#xA;The details of the change are as follows:&#xA;&#xA;- Employee ID (NIK) change from&quot; + CurrentRow(&quot;NIK&quot;).ToString + &quot; &quot; + &quot;  to &quot; + CurrentRow(&quot;NIK&quot;).ToString + &quot;&#xA;- Status: &quot; + CurrentRow(&quot;Keterangan&quot;).ToString + &quot;&#xA;- Reason for Approval: The requested change aligns with the current verified employee records, and the necessary updates have been successfully implemented in the system.&#xA;&#xA;This approval ensures that all records reflect the most accurate information for the employee. Please feel free to contact us if there are any further questions or if additional actions are required to complete this update.&#xA;&#xA;Thank you for your attention to this update.&#xA;&#xA;Best regards,  &#xA;[Indosat Ooredoo Hutchinson]&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="382,178" sap2010:WorkflowViewState.IdRef="SendOutlookMail_3" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="Your Request Status" To="nafissaalabida@gmail.com">
+                        <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Account="asus_1331b@outlook.com" Body="[&quot;Dear HR,&#xD;&#xA;&#xD;&#xA;We are pleased to inform you that the personal data change request submitted by employee &quot; + CurrentRow(&quot;Nama&quot;).ToString + &quot; has been &quot; + CurrentRow(&quot;Keterangan&quot;).ToString + &quot;&#xD;&#xA;&#xD;&#xA;The details of the change are as follows:&#xD;&#xA;&#xD;&#xA;- Employee ID (NIK) change from&quot; + CurrentRow(&quot;NIK&quot;).ToString + &quot; &quot; + &quot;  to &quot; + CurrentRow(&quot;NIK&quot;).ToString + &quot;&#xD;&#xA;- Status: &quot; + CurrentRow(&quot;Keterangan&quot;).ToString + &quot;&#xD;&#xA;- Reason for Approval: The requested change aligns with the current verified employee records, and the necessary updates have been successfully implemented in the system.&#xD;&#xA;&#xD;&#xA;This approval ensures that all records reflect the most accurate information for the employee. Please feel free to contact us if there are any further questions or if additional actions are required to complete this update.&#xD;&#xA;&#xD;&#xA;Thank you for your attention to this update.&#xD;&#xA;&#xD;&#xA;Best regards,  &#xD;&#xA;Indosat Ooredoo Hutchinson&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="382.4,178.4" sap2010:WorkflowViewState.IdRef="SendOutlookMail_3" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="Your Request Status" To="nafissaalabida@gmail.com">
                           <ui:SendOutlookMail.Files>
                             <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                           </ui:SendOutlookMail.Files>
                         </ui:SendOutlookMail>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,164" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Email sent successfully to &quot; + CurrentRow(&quot;Nama&quot;).ToString]" />
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Email sent successfully to &quot; + CurrentRow(&quot;Nama&quot;).ToString]" />
                       </Sequence>
                     </TryCatch.Try>
                     <TryCatch.Catches>
-                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="420,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="419.2,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -293,7 +293,7 @@
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                           </ActivityAction.Argument>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;Email sent unsuccess to &quot; + CurrentRow(&quot;Nama&quot;).ToString]" />
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;Email sent unsuccess to &quot; + CurrentRow(&quot;Nama&quot;).ToString]" />
                         </ActivityAction>
                       </Catch>
                     </TryCatch.Catches>
@@ -301,30 +301,30 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="488,713" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486.4,718.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="454,653" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="452.8,658.4" sap2010:WorkflowViewState.IdRef="TryCatch_6">
                     <TryCatch.Try>
-                      <Sequence sap:VirtualizedContainerService.HintSize="416,402" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                      <Sequence sap:VirtualizedContainerService.HintSize="416,404" sap2010:WorkflowViewState.IdRef="Sequence_17">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Account="asus_1331b@outlook.com" Body="[&quot;Dear HR,&#xA;&#xA;We are pleased to inform you that the personal data change request submitted by employee &quot; + CurrentRow(&quot;Nama&quot;).ToString + &quot; has been &quot; + CurrentRow(&quot;Keterangan&quot;).ToString + &quot;&#xA;&#xA;The details of the change are as follows:&#xA;&#xA;- Employee ID (NIK) change from&quot; + CurrentRow(&quot;NIK&quot;).ToString + &quot; &quot; + &quot;  to &quot; + CurrentRow(&quot;NIK&quot;).ToString + &quot;&#xA;- Status: &quot; + CurrentRow(&quot;Keterangan&quot;).ToString + &quot;&#xA;- Reason for Rejection: The NIK change request could not be processed as the new NIK provided does not align with our verified records. Please verify the NIK details with the employee or cross-check with official records to ensure accuracy.&#xA;&#xA;We encourage further clarification or additional documentation if necessary to support this request in the future. Please reach out if any assistance is required or if there are other queries regarding this review.&#xA;&#xA;Thank you for your attention to this matter.&#xA;&#xA;Best regards,  &#xA;[Indosat Ooredoo Hutchinson]&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="382,178" sap2010:WorkflowViewState.IdRef="SendOutlookMail_4" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="Your Request Status" To="nafissaalabida@gmail.com">
+                        <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Account="asus_1331b@outlook.com" Body="[&quot;Dear HR,&#xD;&#xA;&#xD;&#xA;We are pleased to inform you that the personal data change request submitted by employee &quot; + CurrentRow(&quot;Nama&quot;).ToString + &quot; has been &quot; + CurrentRow(&quot;Keterangan&quot;).ToString + &quot;&#xD;&#xA;&#xD;&#xA;The details of the change are as follows:&#xD;&#xA;&#xD;&#xA;- Employee ID (NIK) change from&quot; + CurrentRow(&quot;NIK&quot;).ToString + &quot; &quot; + &quot;  to &quot; + CurrentRow(&quot;NIK&quot;).ToString + &quot;&#xD;&#xA;- Status: &quot; + CurrentRow(&quot;Keterangan&quot;).ToString + &quot;&#xD;&#xA;- Reason for Rejection: The NIK change request could not be processed as the new NIK provided does not align with our verified records. Please verify the NIK details with the employee or cross-check with official records to ensure accuracy.&#xD;&#xA;&#xD;&#xA;We encourage further clarification or additional documentation if necessary to support this request in the future. Please reach out if any assistance is required or if there are other queries regarding this review.&#xD;&#xA;&#xD;&#xA;Thank you for your attention to this matter.&#xD;&#xA;&#xD;&#xA;Best regards,  &#xD;&#xA;Indosat Ooredoo Hutchinson&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="382.4,178.4" sap2010:WorkflowViewState.IdRef="SendOutlookMail_4" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="Your Request Status" To="nafissaalabida@gmail.com">
                           <ui:SendOutlookMail.Files>
                             <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                           </ui:SendOutlookMail.Files>
                         </ui:SendOutlookMail>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Email sent successfully to &quot; + CurrentRow(&quot;Nama&quot;).ToString]" />
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Email sent successfully to &quot; + CurrentRow(&quot;Nama&quot;).ToString]" />
                       </Sequence>
                     </TryCatch.Try>
                     <TryCatch.Catches>
-                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="420,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="419.2,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -335,7 +335,7 @@
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                           </ActivityAction.Argument>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[&quot;Email sent unsuccess to &quot; + CurrentRow(&quot;Nama&quot;).ToString]" />
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[&quot;Email sent unsuccess to &quot; + CurrentRow(&quot;Nama&quot;).ToString]" />
                         </ActivityAction>
                       </Catch>
                     </TryCatch.Catches>

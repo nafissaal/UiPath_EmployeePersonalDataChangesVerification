@@ -118,7 +118,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="635.2,9163.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="826.4000000000001,9801.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="DocumentFolderPath" />
     </Sequence.Variables>
@@ -127,21 +127,26 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="635.2,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap2010:Annotation.AnnotationText="Assign the folder where the document is stored to the 'DocumentFolderPath' variable." sap:VirtualizedContainerService.HintSize="635.2,157.6" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="s:String[]">[DocumentFolderPath]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("D:\ProjectUiPath\ICSTAR\EmployeeDataChangeVerification\DownloadedDocument")]</InArgument>
       </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="635.2,9026.4" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[DocumentFolderPath]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterate through every file inside the folder." DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="635.2,9620.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[DocumentFolderPath]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="601.6,8888.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="601.6,9452" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="upr:ILocalResource" Name="DocumentResource" />
               <Variable x:TypeArguments="uisad2:DocumentData" Name="classifiedDocument" />
@@ -151,17 +156,28 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:PathExists Exists="{x:Null}" DisplayName="Path Exists" sap:VirtualizedContainerService.HintSize="568,148" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[currentText]" PathType="File" Resource="[DocumentResource]" />
+            <ui:PathExists Exists="{x:Null}" sap2010:Annotation.AnnotationText="Check if the specified path of the file exists." DisplayName="Path Exists" sap:VirtualizedContainerService.HintSize="568,179.2" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[currentText]" PathType="File" Resource="[DocumentResource]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:PathExists>
             <ui:LogMessage DisplayName="Log file processing update" sap:VirtualizedContainerService.HintSize="568,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[string.Format(&quot;Processing file: {0}&quot;, DocumentFolderPath)]" />
-            <p:ClassifyDocument ApiKey="{x:Null}" ClassifierResult="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" DocumentTypes="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" Prompt="{x:Null}" ClassificationResults="[classifiedDocument]" ClassifierId="e60e9c18-ca96-ef11-8473-002248569781" DisplayName="Classify Document" Endpoint="https://cloud.uipath.com/a1c4b207-1a7f-46ac-b95b-4e4a61c8c8ea/c7d813f3-2ccc-48cd-8426-35276c8277f5/du_/api/framework/projects/538aae58-c38b-ef11-8473-00224855a435/classifiers/e60e9c18-ca96-ef11-8473-002248569781/classification/start?api-version=1.0" FileInput="[DocumentResource]" sap:VirtualizedContainerService.HintSize="568,283.2" sap2010:WorkflowViewState.IdRef="ClassifyDocument_1" MinimumConfidence="50" ProjectId="538aae58-c38b-ef11-8473-00224855a435" TimeoutInSeconds="3600">
+            <p:ClassifyDocument ApiKey="{x:Null}" ClassifierResult="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" DocumentTypes="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" Prompt="{x:Null}" sap2010:Annotation.AnnotationText="Classify the type of the document." ClassificationResults="[classifiedDocument]" ClassifierId="e60e9c18-ca96-ef11-8473-002248569781" DisplayName="Classify Document" Endpoint="https://cloud.uipath.com/a1c4b207-1a7f-46ac-b95b-4e4a61c8c8ea/c7d813f3-2ccc-48cd-8426-35276c8277f5/du_/api/framework/projects/538aae58-c38b-ef11-8473-00224855a435/classifiers/e60e9c18-ca96-ef11-8473-002248569781/classification/start?api-version=1.0" FileInput="[DocumentResource]" sap:VirtualizedContainerService.HintSize="568,314.4" sap2010:WorkflowViewState.IdRef="ClassifyDocument_1" MinimumConfidence="50" ProjectId="538aae58-c38b-ef11-8473-00224855a435" TimeoutInSeconds="3600">
               <p:ClassifyDocument.GptPromptWithVariables>
                 <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
               </p:ClassifyDocument.GptPromptWithVariables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </p:ClassifyDocument>
             <ui:LogMessage DisplayName="Log document type" sap:VirtualizedContainerService.HintSize="568,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[string.Format(&quot;Classified {0} as {1}&quot;, DocumentFolderPath, classifiedDocument.DocumentType.DisplayName)]" />
-            <If Condition="[classifiedDocument.DocumentType.DisplayName = &quot;Buku Nikah&quot;]" DisplayName="If Document Type = Buku Nikah" sap:VirtualizedContainerService.HintSize="568,2648" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[classifiedDocument.DocumentType.DisplayName = &quot;Buku Nikah&quot;]" DisplayName="If Document Type = Buku Nikah" sap:VirtualizedContainerService.HintSize="568,2886.4" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="534.4,2388" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="534.4,2626.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="uisad1:IDocumentData(uisasebb:BukuNikahBukuNikahV3)" Name="BukuNikahDocumentData" />
                     <Variable x:TypeArguments="uisad:CreatedValidationAction(uisasebb:BukuNikahBukuNikahV3)" Name="BukuNikahValidationAction" />
@@ -175,21 +191,38 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:BuildDataTable DataTable="[BukuNikahDataTable]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="500.8,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Hari_x0020_Nikah&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Tanggal_x0020_Bulan_x0020_Tahun_x0020_Nikah&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Nama_x0020_Pemilik&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Nama_x0020_Pasangan&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Nomor&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-                  <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[BukuNikahDataTable]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="500.8,148" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Buku Nikah" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]" />
-                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="500.8,559.2" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+                  <ui:BuildDataTable sap2010:Annotation.AnnotationText="Build headers in the 'Buku Nikah' sheet inside the 'ExtractionResultExcel' file" DataTable="[BukuNikahDataTable]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="500.8,136" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Hari_x0020_Nikah&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Tanggal_x0020_Bulan_x0020_Tahun_x0020_Nikah&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Nama_x0020_Pemilik&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Nama_x0020_Pasangan&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Nomor&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:BuildDataTable>
+                  <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" sap2010:Annotation.AnnotationText="Write the output of the 'Build Data Table' activity to the sheet in the Excel file." DataTable="[BukuNikahDataTable]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="500.8,192" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Buku Nikah" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:WriteRange>
+                  <ui:RetryScope sap2010:Annotation.AnnotationText="Retry the 'Extract Document Data' activity if there is an error." DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="500.8,634.4" sap2010:WorkflowViewState.IdRef="RetryScope_1">
                     <ui:RetryScope.ActivityBody>
                       <ActivityAction>
-                        <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,351.2" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                        <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,395.2" sap2010:WorkflowViewState.IdRef="Sequence_21">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisasebb:BukuNikahBukuNikahV3" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" Prompt="{x:Null}" ApplyAutoValidation="True" AutoValidationConfidenceThreshold="[90%]" DisplayName="Extract Document Data" DocType="e40e9c18-ca96-ef11-8473-002248569781" ExtractionResults="[BukuNikahDocumentData]" FileInput="[classifiedDocument]" GenerateData="True" sap:VirtualizedContainerService.HintSize="382.4,291.2" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_1" ProjectId="538aae58-c38b-ef11-8473-00224855a435" TimeoutInSeconds="3600">
+                          <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisasebb:BukuNikahBukuNikahV3" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" Prompt="{x:Null}" sap2010:Annotation.AnnotationText="Extract the document using the Extractor for Buku Nikah." ApplyAutoValidation="True" AutoValidationConfidenceThreshold="[90%]" DisplayName="Extract Document Data" DocType="e40e9c18-ca96-ef11-8473-002248569781" ExtractionResults="[BukuNikahDocumentData]" FileInput="[classifiedDocument]" GenerateData="True" sap:VirtualizedContainerService.HintSize="382.4,335.2" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_1" ProjectId="538aae58-c38b-ef11-8473-00224855a435" TimeoutInSeconds="3600">
                             <p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
                               <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
                             </p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
                           </p:ExtractDocumentDataWithDocumentData>
                         </Sequence>
                       </ActivityAction>
@@ -197,10 +230,20 @@
                     <ui:RetryScope.Condition>
                       <ActivityFunc x:TypeArguments="x:Boolean" />
                     </ui:RetryScope.Condition>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                   </ui:RetryScope>
-                  <If Condition="[BukuNikahDocumentData.Data.nomor.Confidence &lt; 0.9 AndAlso BukuNikahDocumentData.Data.NamaPasangan.Confidence &lt; 0.9 AndAlso BukuNikahDocumentData.Data.TanggalBulanTahunNikah.Confidence &lt; 0.9 AndAlso BukuNikahDocumentData.Data.hari.Confidence &lt; 0.9]" sap:VirtualizedContainerService.HintSize="500.8,1219.2" sap2010:WorkflowViewState.IdRef="If_7">
+                  <If sap2010:Annotation.AnnotationText="If the confidence of each field in Buku Nikah is less than 0.9, the document will be validated by the user in the action center." Condition="[BukuNikahDocumentData.Data.nomor.Confidence &lt; 0.9 AndAlso BukuNikahDocumentData.Data.NamaPasangan.Confidence &lt; 0.9 AndAlso BukuNikahDocumentData.Data.TanggalBulanTahunNikah.Confidence &lt; 0.9 AndAlso BukuNikahDocumentData.Data.hari.Confidence &lt; 0.9]" sap:VirtualizedContainerService.HintSize="500.8,1307.2" sap2010:WorkflowViewState.IdRef="If_7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,959.2" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,1003.2" sap2010:WorkflowViewState.IdRef="Sequence_26">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="sd:DataSet" Name="BukuNikahDataSetAction" />
                         </Sequence.Variables>
@@ -221,7 +264,13 @@
                           </Assign.Value>
                         </Assign>
                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[string.Format(&quot;Write the extraction result to excel from file: {0}&quot;, DocumentFolderPath)]" />
-                        <ui:AppendRange DataTable="[BukuNikahDataSetAction.Tables(0)]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="433.6,139.2" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="Buku Nikah" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]" />
+                        <ui:AppendRange sap2010:Annotation.AnnotationText="Add the 'BukuNikahDataSetAction' to the 'Buku Nikah' sheet inside the 'ExtractionResultExcel' file." DataTable="[BukuNikahDataSetAction.Tables(0)]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="433.6,183.2" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="Buku Nikah" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:AppendRange>
                       </Sequence>
                     </If.Then>
                     <If.Else>
@@ -242,41 +291,13 @@
                       <InArgument x:TypeArguments="sd:DataSet">[BukuNikahDocumentData.Properties.ExtractionResult.AsDataSet(False)]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:AppendRange DataTable="[BukuNikahDataSet.Tables(0)]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="500.8,148" sap2010:WorkflowViewState.IdRef="AppendRange_6" SheetName="Buku Nikah" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]" />
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="500.8,48" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-                    <ui:CommentOut.Body>
-                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="483.2,287.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="[BukuNikahIndex]" DisplayName="For Each currentItem" sap:VirtualizedContainerService.HintSize="449.6,227.2" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[BukuNikahDataSet.Tables]">
-                          <ui:ForEach.Body>
-                            <ActivityAction x:TypeArguments="x:Object">
-                              <ActivityAction.Argument>
-                                <DelegateInArgument x:TypeArguments="x:Object" Name="currentItem" />
-                              </ActivityAction.Argument>
-                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </Sequence>
-                            </ActivityAction>
-                          </ui:ForEach.Body>
-                        </ui:ForEach>
-                      </Sequence>
-                    </ui:CommentOut.Body>
+                  <ui:AppendRange sap2010:Annotation.AnnotationText="Add the 'BukuNikahDataSet' to the 'Buku Nikah' sheet inside the 'ExtractionResultExcel' file." DataTable="[BukuNikahDataSet.Tables(0)]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="500.8,183.2" sap2010:WorkflowViewState.IdRef="AppendRange_6" SheetName="Buku Nikah" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                  </ui:CommentOut>
+                  </ui:AppendRange>
                 </Sequence>
               </If.Then>
               <If.Else>
@@ -289,9 +310,9 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If Condition="[classifiedDocument.DocumentType.DisplayName = &quot;id_cards&quot;]" DisplayName="If Document Type = KTP" sap:VirtualizedContainerService.HintSize="568,2793.6" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[classifiedDocument.DocumentType.DisplayName = &quot;id_cards&quot;]" DisplayName="If Document Type = KTP" sap:VirtualizedContainerService.HintSize="568,2874.4" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="534.4,2533.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="534.4,2614.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="uisad1:IDocumentData(uisasebb1:BukuNikahIdCardsV3)" Name="KTPDocumentData" />
                     <Variable x:TypeArguments="uisad:CreatedValidationAction(uisasebb1:BukuNikahIdCardsV3)" Name="KTPValidationAction" />
@@ -308,21 +329,38 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:BuildDataTable DataTable="[KTPDataTable]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="500.8,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;NIK&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Kabupaten&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Tanggal_x0020_Lahir&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Provinsi&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Agama&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Nama&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Tempat_x0020_Lahir&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Status_x0020_Perkawinan&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Kewarganegaraan&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Kecamatan&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Pekerjaan&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Jenis_x0020_Kelamin&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Alamat&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Kelurahan&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;RT_x002F_RW&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Berlaku&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-                  <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[KTPDataTable]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="500.8,148" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="KTP" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]" />
-                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="500.8,591.2" sap2010:WorkflowViewState.IdRef="RetryScope_2">
+                  <ui:BuildDataTable sap2010:Annotation.AnnotationText="Build headers in the 'KTP' sheet inside the 'ExtractionResultExcel' file" DataTable="[KTPDataTable]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="500.8,136" sap2010:WorkflowViewState.IdRef="BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;NIK&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Kabupaten&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Tanggal_x0020_Lahir&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Provinsi&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Agama&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Nama&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Tempat_x0020_Lahir&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Status_x0020_Perkawinan&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Kewarganegaraan&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Kecamatan&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Pekerjaan&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Jenis_x0020_Kelamin&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Alamat&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Kelurahan&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;RT_x002F_RW&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Berlaku&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:BuildDataTable>
+                  <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" sap2010:Annotation.AnnotationText="Write the output of the 'Build Data Table' activity to the sheet in the Excel file." DataTable="[KTPDataTable]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="500.8,192" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="KTP" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:WriteRange>
+                  <ui:RetryScope sap2010:Annotation.AnnotationText="Retry the 'Extract Document Data' activity if there is an error." DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="500.8,666.4" sap2010:WorkflowViewState.IdRef="RetryScope_2">
                     <ui:RetryScope.ActivityBody>
                       <ActivityAction>
-                        <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,383.2" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                        <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,427.2" sap2010:WorkflowViewState.IdRef="Sequence_22">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisasebb1:BukuNikahIdCardsV3" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" Prompt="{x:Null}" ApplyAutoValidation="True" AutoValidationConfidenceThreshold="[30%]" DisplayName="Extract Document Data" DocType="e50e9c18-ca96-ef11-8473-002248569781" ExtractionResults="[KTPDocumentData]" FileInput="[classifiedDocument]" GenerateData="True" sap:VirtualizedContainerService.HintSize="382.4,323.2" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_2" ProjectId="538aae58-c38b-ef11-8473-00224855a435" TimeoutInSeconds="3600">
+                          <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisasebb1:BukuNikahIdCardsV3" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" Prompt="{x:Null}" sap2010:Annotation.AnnotationText="Extract the document using the Extractor for KTP (ID Cards)." ApplyAutoValidation="True" AutoValidationConfidenceThreshold="[30%]" DisplayName="Extract Document Data" DocType="e50e9c18-ca96-ef11-8473-002248569781" ExtractionResults="[KTPDocumentData]" FileInput="[classifiedDocument]" GenerateData="True" sap:VirtualizedContainerService.HintSize="382.4,367.2" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_2" ProjectId="538aae58-c38b-ef11-8473-00224855a435" TimeoutInSeconds="3600">
                             <p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
                               <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
                             </p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
                           </p:ExtractDocumentDataWithDocumentData>
                         </Sequence>
                       </ActivityAction>
@@ -330,53 +368,15 @@
                     <ui:RetryScope.Condition>
                       <ActivityFunc x:TypeArguments="x:Boolean" />
                     </ui:RetryScope.Condition>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                   </ui:RetryScope>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="500.8,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_6">
-                    <ui:CommentOut.Body>
-                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="467.2,164.8" sap2010:WorkflowViewState.IdRef="Sequence_19">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_5">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:String">[NamaConfidence]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:String">[KTPDocumentData.Data.Nama.Confidence.ToString()]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                      </Sequence>
-                    </ui:CommentOut.Body>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:CommentOut>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="500.8,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_7">
-                    <ui:CommentOut.Body>
-                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="Sequence_20">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[NamaConfidence]" />
-                      </Sequence>
-                    </ui:CommentOut.Body>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:CommentOut>
-                  <If Condition="[KTPDocumentData.Data.Berlaku.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.Kewarganegaraan.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.Pekerjaan.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.StatusPerkawinan.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.Agama.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.Kecamatan.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.Kelurahan.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.RTRW.Confidence &gt; 90 AndAlso KTPDocumentData.Data.Alamat.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.JenisKelamin.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.TempatLahir.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.Nama.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.NIK.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.Kabupaten.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.Provinsi.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.TanggalLahir.Confidence &lt; 0.9]" sap:VirtualizedContainerService.HintSize="500.8,1219.2" sap2010:WorkflowViewState.IdRef="If_5">
+                  <If Condition="[KTPDocumentData.Data.Berlaku.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.Kewarganegaraan.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.Pekerjaan.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.StatusPerkawinan.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.Agama.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.Kecamatan.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.Kelurahan.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.RTRW.Confidence &gt; 90 AndAlso KTPDocumentData.Data.Alamat.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.JenisKelamin.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.TempatLahir.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.Nama.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.NIK.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.Kabupaten.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.Provinsi.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.TanggalLahir.Confidence &lt; 0.9]" sap:VirtualizedContainerService.HintSize="500.8,1263.2" sap2010:WorkflowViewState.IdRef="If_5">
                     <If.Then>
-                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,959.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,1003.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -394,7 +394,13 @@
                           </Assign.Value>
                         </Assign>
                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[string.Format(&quot;Write the extraction result to excel from file: {0}&quot;, DocumentFolderPath)]" />
-                        <ui:AppendRange DataTable="[KTPDataSetAction.Tables(0)]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="433.6,139.2" sap2010:WorkflowViewState.IdRef="AppendRange_2" SheetName="KTP" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]" />
+                        <ui:AppendRange sap2010:Annotation.AnnotationText="Add the 'KTPDataSetAction' to the 'KTP' sheet inside the 'ExtractionResultExcel' file." DataTable="[KTPDataSetAction.Tables(0)]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="433.6,183.2" sap2010:WorkflowViewState.IdRef="AppendRange_2" SheetName="KTP" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:AppendRange>
                       </Sequence>
                     </If.Then>
                     <If.Else>
@@ -415,40 +421,13 @@
                       <InArgument x:TypeArguments="sd:DataSet">[KTPDocumentData.Properties.ExtractionResult.AsDataSet(False)]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:AppendRange DataTable="[KTPDataSet.Tables(0)]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="500.8,148" sap2010:WorkflowViewState.IdRef="AppendRange_4" SheetName="KTP" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]" />
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="500.8,48" sap2010:WorkflowViewState.IdRef="CommentOut_3">
-                    <ui:CommentOut.Body>
-                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="483.2,287.2" sap2010:WorkflowViewState.IdRef="Sequence_14">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="[KTPIndex]" DisplayName="For Each currentItem" sap:VirtualizedContainerService.HintSize="449.6,227.2" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[KTPDataSetAction.Tables]">
-                          <ui:ForEach.Body>
-                            <ActivityAction x:TypeArguments="x:Object">
-                              <ActivityAction.Argument>
-                                <DelegateInArgument x:TypeArguments="x:Object" Name="currentItem" />
-                              </ActivityAction.Argument>
-                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </Sequence>
-                            </ActivityAction>
-                          </ui:ForEach.Body>
-                        </ui:ForEach>
-                      </Sequence>
-                    </ui:CommentOut.Body>
+                  <ui:AppendRange sap2010:Annotation.AnnotationText="Add the 'KTPDataSet' to the 'KTP' sheet inside the 'ExtractionResultExcel' file." DataTable="[KTPDataSet.Tables(0)]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="500.8,183.2" sap2010:WorkflowViewState.IdRef="AppendRange_4" SheetName="KTP" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                  </ui:CommentOut>
+                  </ui:AppendRange>
                 </Sequence>
               </If.Then>
               <If.Else>
@@ -461,9 +440,9 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If Condition="[classifiedDocument.DocumentType.DisplayName = &quot;npwp&quot;]" DisplayName="If Document Type = NPWP" sap:VirtualizedContainerService.HintSize="568,2607.2" sap2010:WorkflowViewState.IdRef="If_3">
+            <If Condition="[classifiedDocument.DocumentType.DisplayName = &quot;npwp&quot;]" DisplayName="If Document Type = NPWP" sap:VirtualizedContainerService.HintSize="568,2788.8" sap2010:WorkflowViewState.IdRef="If_3">
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="534.4,2356" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="534.4,2537.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="uisad1:IDocumentData(uisasebb2:BukuNikahNpwpV3)" Name="NPWPDocumentData" />
                     <Variable x:TypeArguments="uisad:CreatedValidationAction(uisasebb2:BukuNikahNpwpV3)" Name="NPWPValidationAction" />
@@ -477,21 +456,38 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:BuildDataTable DataTable="[NPWPDataTable]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="500.8,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_4" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;NPWP&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Nama&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;NIK&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Alamat&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-                  <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[NPWPDataTable]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="500.8,148" sap2010:WorkflowViewState.IdRef="WriteRange_3" SheetName="NPWP" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]" />
-                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="500.8,527.2" sap2010:WorkflowViewState.IdRef="RetryScope_3">
+                  <ui:BuildDataTable sap2010:Annotation.AnnotationText="Build headers in the 'NPWP' sheet inside the 'ExtractionResultExcel' file" DataTable="[NPWPDataTable]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="500.8,136" sap2010:WorkflowViewState.IdRef="BuildDataTable_4" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;NPWP&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Nama&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;NIK&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Alamat&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:BuildDataTable>
+                  <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" sap2010:Annotation.AnnotationText="Write the output of the 'Build Data Table' activity to the sheet in the Excel file." DataTable="[NPWPDataTable]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="500.8,192" sap2010:WorkflowViewState.IdRef="WriteRange_3" SheetName="NPWP" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:WriteRange>
+                  <ui:RetryScope sap2010:Annotation.AnnotationText="Retry the 'Extract Document Data' activity if there is an error." DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="500.8,589.6" sap2010:WorkflowViewState.IdRef="RetryScope_3">
                     <ui:RetryScope.ActivityBody>
                       <ActivityAction>
-                        <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,319.2" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                        <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,350.4" sap2010:WorkflowViewState.IdRef="Sequence_23">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisasebb2:BukuNikahNpwpV3" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" Prompt="{x:Null}" ApplyAutoValidation="True" AutoValidationConfidenceThreshold="[90%]" DisplayName="Extract Document Data" DocType="e70e9c18-ca96-ef11-8473-002248569781" ExtractionResults="[NPWPDocumentData]" FileInput="[classifiedDocument]" GenerateData="True" sap:VirtualizedContainerService.HintSize="382.4,259.2" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_3" ProjectId="538aae58-c38b-ef11-8473-00224855a435" TimeoutInSeconds="3600">
+                          <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisasebb2:BukuNikahNpwpV3" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" Prompt="{x:Null}" sap2010:Annotation.AnnotationText="Extract the document using the Extractor for NPWP." ApplyAutoValidation="True" AutoValidationConfidenceThreshold="[90%]" DisplayName="Extract Document Data" DocType="e70e9c18-ca96-ef11-8473-002248569781" ExtractionResults="[NPWPDocumentData]" FileInput="[classifiedDocument]" GenerateData="True" sap:VirtualizedContainerService.HintSize="382.4,290.4" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_3" ProjectId="538aae58-c38b-ef11-8473-00224855a435" TimeoutInSeconds="3600">
                             <p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
                               <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
                             </p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
                           </p:ExtractDocumentDataWithDocumentData>
                         </Sequence>
                       </ActivityAction>
@@ -499,10 +495,15 @@
                     <ui:RetryScope.Condition>
                       <ActivityFunc x:TypeArguments="x:Boolean" />
                     </ui:RetryScope.Condition>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                   </ui:RetryScope>
-                  <If Condition="[NPWPDocumentData.Data.Alamat.Confidence &lt; 0.9 AndAlso NPWPDocumentData.Data.NIK.Confidence &lt; 0.9  AndAlso NPWPDocumentData.Data.Nama.Confidence &lt; 0.9  AndAlso NPWPDocumentData.Data.NPWP.Confidence &lt; 0.9]" sap:VirtualizedContainerService.HintSize="500.8,1219.2" sap2010:WorkflowViewState.IdRef="If_6">
+                  <If Condition="[NPWPDocumentData.Data.Alamat.Confidence &lt; 0.9 AndAlso NPWPDocumentData.Data.NIK.Confidence &lt; 0.9  AndAlso NPWPDocumentData.Data.Nama.Confidence &lt; 0.9  AndAlso NPWPDocumentData.Data.NPWP.Confidence &lt; 0.9]" sap:VirtualizedContainerService.HintSize="500.8,1263.2" sap2010:WorkflowViewState.IdRef="If_6">
                     <If.Then>
-                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,959.2" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,1003.2" sap2010:WorkflowViewState.IdRef="Sequence_24">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="sd:DataSet" Name="NPWPDataSetAction" />
                         </Sequence.Variables>
@@ -523,7 +524,13 @@
                           </Assign.Value>
                         </Assign>
                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[string.Format(&quot;Write the extraction result to excel from file: {0}&quot;, DocumentFolderPath)]" />
-                        <ui:AppendRange DataTable="[NPWPDataSetAction.Tables(0)]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="433.6,139.2" sap2010:WorkflowViewState.IdRef="AppendRange_5" SheetName="NPWP" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]" />
+                        <ui:AppendRange sap2010:Annotation.AnnotationText="Add the 'NPWPDataSetAction' to the 'NPWP' sheet inside the 'ExtractionResultExcel' file." DataTable="[NPWPDataSetAction.Tables(0)]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="433.6,183.2" sap2010:WorkflowViewState.IdRef="AppendRange_5" SheetName="NPWP" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:AppendRange>
                       </Sequence>
                     </If.Then>
                     <If.Else>
@@ -544,40 +551,13 @@
                       <InArgument x:TypeArguments="sd:DataSet">[NPWPDocumentData.Properties.ExtractionResult.AsDataSet(False)]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:AppendRange DataTable="[NPWPDataSet.Tables(0)]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="500.8,148" sap2010:WorkflowViewState.IdRef="AppendRange_3" SheetName="NPWP" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]" />
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="500.8,48" sap2010:WorkflowViewState.IdRef="CommentOut_4">
-                    <ui:CommentOut.Body>
-                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="483.2,287.2" sap2010:WorkflowViewState.IdRef="Sequence_15">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="[NPWPIndex]" DisplayName="For Each currentItem" sap:VirtualizedContainerService.HintSize="449.6,227.2" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[NPWPDataSet.Tables]">
-                          <ui:ForEach.Body>
-                            <ActivityAction x:TypeArguments="x:Object">
-                              <ActivityAction.Argument>
-                                <DelegateInArgument x:TypeArguments="x:Object" Name="currentItem" />
-                              </ActivityAction.Argument>
-                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </Sequence>
-                            </ActivityAction>
-                          </ui:ForEach.Body>
-                        </ui:ForEach>
-                      </Sequence>
-                    </ui:CommentOut.Body>
+                  <ui:AppendRange sap2010:Annotation.AnnotationText="Add the 'NPWPDataSet' to the 'NPWP' sheet inside the 'ExtractionResultExcel' file." DataTable="[NPWPDataSet.Tables(0)]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="500.8,183.2" sap2010:WorkflowViewState.IdRef="AppendRange_3" SheetName="NPWP" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                  </ui:CommentOut>
+                  </ui:AppendRange>
                 </Sequence>
               </If.Then>
               <If.Else>
@@ -593,6 +573,11 @@
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
   </Sequence>
 </Activity>
