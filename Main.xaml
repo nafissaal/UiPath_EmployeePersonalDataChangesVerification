@@ -61,13 +61,13 @@
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1276,1326" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="826.4000000000001,1340.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_3">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,255" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
@@ -89,7 +89,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="" DisplayName="LoginToSuccessFactors - Invoke Workflow File (LoginToSuccessFactors.xaml)" sap:VirtualizedContainerService.HintSize="416,235" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="LoginToSuccessFactors.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="" DisplayName="LoginToSuccessFactors - Invoke Workflow File (LoginToSuccessFactors.xaml)" sap:VirtualizedContainerService.HintSize="416,237.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="LoginToSuccessFactors.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
@@ -99,27 +99,27 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="NavigateToRequests - Invoke Workflow File (NavigateAndExtractInformation.xaml)" sap:VirtualizedContainerService.HintSize="416,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="NavigateToRequests.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="NavigateToRequests - Invoke Workflow File (NavigateToRequests.xaml)" sap:VirtualizedContainerService.HintSize="416,206.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="NavigateToRequests.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DocUnderstanding - Invoke Workflow File (DocUnderstanding.xaml)" sap:VirtualizedContainerService.HintSize="416,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="DocUnderstanding.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DocUnderstanding - Invoke Workflow File (DocUnderstanding.xaml)" sap:VirtualizedContainerService.HintSize="416,206.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="DocUnderstanding.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="AddColumnNIKRequest- Invoke Workflow File (AddColumnNIKForm.xaml)" sap:VirtualizedContainerService.HintSize="416,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="AddColumnNIKRequest.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="AddColumnNIKRequest- Invoke Workflow File (AddColumnNIKForm.xaml)" sap:VirtualizedContainerService.HintSize="416,206.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="AddColumnNIKRequest.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CompareNIK - Invoke Workflow File (CompareNIK.xaml)" sap:VirtualizedContainerService.HintSize="416,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="CompareNIK.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CompareNIK - Invoke Workflow File (CompareNIK.xaml)" sap:VirtualizedContainerService.HintSize="416,206.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="CompareNIK.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="EmailAutomation - Invoke Workflow File (EmailAutomation.xaml)" sap:VirtualizedContainerService.HintSize="416,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="EmailAutomation.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="EmailAutomation - Invoke Workflow File (EmailAutomation.xaml)" sap:VirtualizedContainerService.HintSize="416,197.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="EmailAutomation.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
