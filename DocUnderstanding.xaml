@@ -118,9 +118,10 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="826.4000000000001,9801.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="826.4000000000001,9805.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="DocumentFolderPath" />
+      <Variable x:TypeArguments="x:Int32" Name="FileIndex" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -140,13 +141,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterate through every file inside the folder." DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="635.2,9620.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[DocumentFolderPath]">
+    <ui:ForEach x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Iterate through every file inside the folder." CurrentIndex="[FileIndex]" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="635.2,9624.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[DocumentFolderPath]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="601.6,9452" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="601.6,9456" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="upr:ILocalResource" Name="DocumentResource" />
               <Variable x:TypeArguments="uisad2:DocumentData" Name="classifiedDocument" />
@@ -164,7 +165,7 @@
               </sap:WorkflowViewStateService.ViewState>
             </ui:PathExists>
             <ui:LogMessage DisplayName="Log file processing update" sap:VirtualizedContainerService.HintSize="568,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[string.Format(&quot;Processing file: {0}&quot;, DocumentFolderPath)]" />
-            <p:ClassifyDocument ApiKey="{x:Null}" ClassifierResult="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" DocumentTypes="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" Prompt="{x:Null}" sap2010:Annotation.AnnotationText="Classify the type of the document." ClassificationResults="[classifiedDocument]" ClassifierId="e60e9c18-ca96-ef11-8473-002248569781" DisplayName="Classify Document" Endpoint="https://cloud.uipath.com/a1c4b207-1a7f-46ac-b95b-4e4a61c8c8ea/c7d813f3-2ccc-48cd-8426-35276c8277f5/du_/api/framework/projects/538aae58-c38b-ef11-8473-00224855a435/classifiers/e60e9c18-ca96-ef11-8473-002248569781/classification/start?api-version=1.0" FileInput="[DocumentResource]" sap:VirtualizedContainerService.HintSize="568,314.4" sap2010:WorkflowViewState.IdRef="ClassifyDocument_1" MinimumConfidence="50" ProjectId="538aae58-c38b-ef11-8473-00224855a435" TimeoutInSeconds="3600">
+            <p:ClassifyDocument ApiKey="{x:Null}" ClassifierResult="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" DocumentTypes="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" Prompt="{x:Null}" sap2010:Annotation.AnnotationText="Classify the type of the document." ClassificationResults="[classifiedDocument]" ClassifierId="e60e9c18-ca96-ef11-8473-002248569781" DisplayName="Classify Document" Endpoint="https://cloud.uipath.com/a1c4b207-1a7f-46ac-b95b-4e4a61c8c8ea/c7d813f3-2ccc-48cd-8426-35276c8277f5/du_/api/framework/projects/538aae58-c38b-ef11-8473-00224855a435/classifiers/e60e9c18-ca96-ef11-8473-002248569781/classification/start?api-version=1.0" FileInput="[DocumentResource]" sap:VirtualizedContainerService.HintSize="568,314.4" sap2010:WorkflowViewState.IdRef="ClassifyDocument_1" MinimumConfidence="70" ProjectId="538aae58-c38b-ef11-8473-00224855a435" TimeoutInSeconds="3600">
               <p:ClassifyDocument.GptPromptWithVariables>
                 <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
               </p:ClassifyDocument.GptPromptWithVariables>
@@ -175,9 +176,9 @@
               </sap:WorkflowViewStateService.ViewState>
             </p:ClassifyDocument>
             <ui:LogMessage DisplayName="Log document type" sap:VirtualizedContainerService.HintSize="568,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[string.Format(&quot;Classified {0} as {1}&quot;, DocumentFolderPath, classifiedDocument.DocumentType.DisplayName)]" />
-            <If Condition="[classifiedDocument.DocumentType.DisplayName = &quot;Buku Nikah&quot;]" DisplayName="If Document Type = Buku Nikah" sap:VirtualizedContainerService.HintSize="568,2886.4" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[classifiedDocument.DocumentType.DisplayName = &quot;Buku Nikah&quot;]" DisplayName="If Document Type = Buku Nikah" sap:VirtualizedContainerService.HintSize="568,2848" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="534.4,2626.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="534.4,2588" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="uisad1:IDocumentData(uisasebb:BukuNikahBukuNikahV3)" Name="BukuNikahDocumentData" />
                     <Variable x:TypeArguments="uisad:CreatedValidationAction(uisasebb:BukuNikahBukuNikahV3)" Name="BukuNikahValidationAction" />
@@ -214,7 +215,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisasebb:BukuNikahBukuNikahV3" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" Prompt="{x:Null}" sap2010:Annotation.AnnotationText="Extract the document using the Extractor for Buku Nikah." ApplyAutoValidation="True" AutoValidationConfidenceThreshold="[90%]" DisplayName="Extract Document Data" DocType="e40e9c18-ca96-ef11-8473-002248569781" ExtractionResults="[BukuNikahDocumentData]" FileInput="[classifiedDocument]" GenerateData="True" sap:VirtualizedContainerService.HintSize="382.4,335.2" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_1" ProjectId="538aae58-c38b-ef11-8473-00224855a435" TimeoutInSeconds="3600">
+                          <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisasebb:BukuNikahBukuNikahV3" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" Prompt="{x:Null}" sap2010:Annotation.AnnotationText="Extract the document using the Extractor for Buku Nikah." ApplyAutoValidation="False" AutoValidationConfidenceThreshold="[90%]" DisplayName="Extract Document Data" DocType="e40e9c18-ca96-ef11-8473-002248569781" ExtractionResults="[BukuNikahDocumentData]" FileInput="[classifiedDocument]" GenerateData="True" sap:VirtualizedContainerService.HintSize="382.4,335.2" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_1" ProjectId="538aae58-c38b-ef11-8473-00224855a435" TimeoutInSeconds="3600">
                             <p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
                               <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
                             </p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
@@ -236,7 +237,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:RetryScope>
-                  <If sap2010:Annotation.AnnotationText="If the confidence of each field in Buku Nikah is less than 0.9, the document will be validated by the user in the action center." Condition="[BukuNikahDocumentData.Data.nomor.Confidence &lt; 0.9 AndAlso BukuNikahDocumentData.Data.NamaPasangan.Confidence &lt; 0.9 AndAlso BukuNikahDocumentData.Data.TanggalBulanTahunNikah.Confidence &lt; 0.9 AndAlso BukuNikahDocumentData.Data.hari.Confidence &lt; 0.9]" sap:VirtualizedContainerService.HintSize="500.8,1307.2" sap2010:WorkflowViewState.IdRef="If_7">
+                  <If sap2010:Annotation.AnnotationText="If the confidence of each field in Buku Nikah is less than 0.95, the document will be validated by the user in the action center." Condition="[BukuNikahDocumentData.Data.nomor.Confidence &lt; 0.99 AndAlso BukuNikahDocumentData.Data.NamaPasangan.Confidence &lt; 0.99 AndAlso BukuNikahDocumentData.Data.TanggalBulanTahunNikah.Confidence &lt; 0.99 AndAlso BukuNikahDocumentData.Data.hari.Confidence &lt; 0.99]" sap:VirtualizedContainerService.HintSize="500.8,1565.6" sap2010:WorkflowViewState.IdRef="If_7">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -274,30 +275,30 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="467.2,356.8" sap2010:WorkflowViewState.IdRef="Sequence_27">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_8">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="sd:DataSet">[BukuNikahDataSet]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="sd:DataSet">[BukuNikahDocumentData.Properties.ExtractionResult.AsDataSet(False)]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:AppendRange sap2010:Annotation.AnnotationText="Add the 'BukuNikahDataSet' to the 'Buku Nikah' sheet inside the 'ExtractionResultExcel' file." DataTable="[BukuNikahDataSet.Tables(0)]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="433.6,183.2" sap2010:WorkflowViewState.IdRef="AppendRange_6" SheetName="Buku Nikah" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:AppendRange>
                       </Sequence>
                     </If.Else>
                   </If>
-                  <Assign sap:VirtualizedContainerService.HintSize="500.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_8">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="sd:DataSet">[BukuNikahDataSet]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="sd:DataSet">[BukuNikahDocumentData.Properties.ExtractionResult.AsDataSet(False)]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <ui:AppendRange sap2010:Annotation.AnnotationText="Add the 'BukuNikahDataSet' to the 'Buku Nikah' sheet inside the 'ExtractionResultExcel' file." DataTable="[BukuNikahDataSet.Tables(0)]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="500.8,183.2" sap2010:WorkflowViewState.IdRef="AppendRange_6" SheetName="Buku Nikah" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:AppendRange>
                 </Sequence>
               </If.Then>
               <If.Else>
@@ -310,9 +311,9 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If Condition="[classifiedDocument.DocumentType.DisplayName = &quot;id_cards&quot;]" DisplayName="If Document Type = KTP" sap:VirtualizedContainerService.HintSize="568,2874.4" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[classifiedDocument.DocumentType.DisplayName = &quot;id_cards&quot;]" DisplayName="If Document Type = KTP" sap:VirtualizedContainerService.HintSize="568,2880" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="534.4,2614.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="534.4,2620" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="uisad1:IDocumentData(uisasebb1:BukuNikahIdCardsV3)" Name="KTPDocumentData" />
                     <Variable x:TypeArguments="uisad:CreatedValidationAction(uisasebb1:BukuNikahIdCardsV3)" Name="KTPValidationAction" />
@@ -352,7 +353,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisasebb1:BukuNikahIdCardsV3" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" Prompt="{x:Null}" sap2010:Annotation.AnnotationText="Extract the document using the Extractor for KTP (ID Cards)." ApplyAutoValidation="True" AutoValidationConfidenceThreshold="[30%]" DisplayName="Extract Document Data" DocType="e50e9c18-ca96-ef11-8473-002248569781" ExtractionResults="[KTPDocumentData]" FileInput="[classifiedDocument]" GenerateData="True" sap:VirtualizedContainerService.HintSize="382.4,367.2" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_2" ProjectId="538aae58-c38b-ef11-8473-00224855a435" TimeoutInSeconds="3600">
+                          <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisasebb1:BukuNikahIdCardsV3" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" Prompt="{x:Null}" sap2010:Annotation.AnnotationText="Extract the document using the Extractor for KTP (ID Cards)." ApplyAutoValidation="False" AutoValidationConfidenceThreshold="[30%]" DisplayName="Extract Document Data" DocType="e50e9c18-ca96-ef11-8473-002248569781" ExtractionResults="[KTPDocumentData]" FileInput="[classifiedDocument]" GenerateData="True" sap:VirtualizedContainerService.HintSize="382.4,367.2" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_2" ProjectId="538aae58-c38b-ef11-8473-00224855a435" TimeoutInSeconds="3600">
                             <p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
                               <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
                             </p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
@@ -374,7 +375,12 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:RetryScope>
-                  <If Condition="[KTPDocumentData.Data.Berlaku.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.Kewarganegaraan.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.Pekerjaan.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.StatusPerkawinan.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.Agama.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.Kecamatan.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.Kelurahan.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.RTRW.Confidence &gt; 90 AndAlso KTPDocumentData.Data.Alamat.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.JenisKelamin.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.TempatLahir.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.Nama.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.NIK.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.Kabupaten.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.Provinsi.Confidence &lt; 0.9 AndAlso KTPDocumentData.Data.TanggalLahir.Confidence &lt; 0.9]" sap:VirtualizedContainerService.HintSize="500.8,1263.2" sap2010:WorkflowViewState.IdRef="If_5">
+                  <If sap2010:Annotation.AnnotationText="If the confidence of each field in KTP is less than 0.95, the document will be validated by the user in the action center." Condition="[KTPDocumentData.Data.Berlaku.Confidence &lt; 0.99 AndAlso KTPDocumentData.Data.Kewarganegaraan.Confidence &lt; 0.99 AndAlso KTPDocumentData.Data.Pekerjaan.Confidence &lt; 0.99 AndAlso KTPDocumentData.Data.StatusPerkawinan.Confidence &lt; 0.99 AndAlso KTPDocumentData.Data.Agama.Confidence &lt; 0.99 AndAlso KTPDocumentData.Data.Kecamatan.Confidence &lt; 0.99 AndAlso KTPDocumentData.Data.Kelurahan.Confidence &lt; 0.99 AndAlso KTPDocumentData.Data.RTRW.Confidence &gt; 0.99 AndAlso KTPDocumentData.Data.Alamat.Confidence &lt; 0.99 AndAlso KTPDocumentData.Data.JenisKelamin.Confidence &lt; 0.99 AndAlso KTPDocumentData.Data.TempatLahir.Confidence &lt; 0.99 AndAlso KTPDocumentData.Data.Nama.Confidence &lt; 0.99 AndAlso KTPDocumentData.Data.NIK.Confidence &lt; 0.99 AndAlso KTPDocumentData.Data.Kabupaten.Confidence &lt; 0.99 AndAlso KTPDocumentData.Data.Provinsi.Confidence &lt; 0.99 AndAlso KTPDocumentData.Data.TanggalLahir.Confidence &lt; 0.99]" sap:VirtualizedContainerService.HintSize="500.8,1565.6" sap2010:WorkflowViewState.IdRef="If_5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
                       <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,1003.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
                         <sap:WorkflowViewStateService.ViewState>
@@ -404,30 +410,30 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="467.2,356.8" sap2010:WorkflowViewState.IdRef="Sequence_17">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_6">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="sd:DataSet">[KTPDataSet]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="sd:DataSet">[KTPDocumentData.Properties.ExtractionResult.AsDataSet(False)]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:AppendRange sap2010:Annotation.AnnotationText="Add the 'KTPDataSet' to the 'KTP' sheet inside the 'ExtractionResultExcel' file." DataTable="[KTPDataSet.Tables(0)]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="433.6,183.2" sap2010:WorkflowViewState.IdRef="AppendRange_4" SheetName="KTP" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:AppendRange>
                       </Sequence>
                     </If.Else>
                   </If>
-                  <Assign sap:VirtualizedContainerService.HintSize="500.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_6">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="sd:DataSet">[KTPDataSet]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="sd:DataSet">[KTPDocumentData.Properties.ExtractionResult.AsDataSet(False)]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <ui:AppendRange sap2010:Annotation.AnnotationText="Add the 'KTPDataSet' to the 'KTP' sheet inside the 'ExtractionResultExcel' file." DataTable="[KTPDataSet.Tables(0)]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="500.8,183.2" sap2010:WorkflowViewState.IdRef="AppendRange_4" SheetName="KTP" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:AppendRange>
                 </Sequence>
               </If.Then>
               <If.Else>
@@ -440,9 +446,14 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If Condition="[classifiedDocument.DocumentType.DisplayName = &quot;npwp&quot;]" DisplayName="If Document Type = NPWP" sap:VirtualizedContainerService.HintSize="568,2788.8" sap2010:WorkflowViewState.IdRef="If_3">
+            <If sap2010:Annotation.AnnotationText="" Condition="[classifiedDocument.DocumentType.DisplayName = &quot;npwp&quot;]" DisplayName="If Document Type = NPWP" sap:VirtualizedContainerService.HintSize="568,2825.6" sap2010:WorkflowViewState.IdRef="If_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="534.4,2537.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="534.4,2543.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="uisad1:IDocumentData(uisasebb2:BukuNikahNpwpV3)" Name="NPWPDocumentData" />
                     <Variable x:TypeArguments="uisad:CreatedValidationAction(uisasebb2:BukuNikahNpwpV3)" Name="NPWPValidationAction" />
@@ -479,7 +490,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisasebb2:BukuNikahNpwpV3" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" Prompt="{x:Null}" sap2010:Annotation.AnnotationText="Extract the document using the Extractor for NPWP." ApplyAutoValidation="True" AutoValidationConfidenceThreshold="[90%]" DisplayName="Extract Document Data" DocType="e70e9c18-ca96-ef11-8473-002248569781" ExtractionResults="[NPWPDocumentData]" FileInput="[classifiedDocument]" GenerateData="True" sap:VirtualizedContainerService.HintSize="382.4,290.4" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_3" ProjectId="538aae58-c38b-ef11-8473-00224855a435" TimeoutInSeconds="3600">
+                          <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisasebb2:BukuNikahNpwpV3" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" Prompt="{x:Null}" sap2010:Annotation.AnnotationText="Extract the document using the Extractor for NPWP." ApplyAutoValidation="False" AutoValidationConfidenceThreshold="[90%]" DisplayName="Extract Document Data" DocType="e70e9c18-ca96-ef11-8473-002248569781" ExtractionResults="[NPWPDocumentData]" FileInput="[classifiedDocument]" GenerateData="True" sap:VirtualizedContainerService.HintSize="382.4,290.4" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_3" ProjectId="538aae58-c38b-ef11-8473-00224855a435" TimeoutInSeconds="3600">
                             <p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
                               <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
                             </p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
@@ -501,7 +512,12 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:RetryScope>
-                  <If Condition="[NPWPDocumentData.Data.Alamat.Confidence &lt; 0.9 AndAlso NPWPDocumentData.Data.NIK.Confidence &lt; 0.9  AndAlso NPWPDocumentData.Data.Nama.Confidence &lt; 0.9  AndAlso NPWPDocumentData.Data.NPWP.Confidence &lt; 0.9]" sap:VirtualizedContainerService.HintSize="500.8,1263.2" sap2010:WorkflowViewState.IdRef="If_6">
+                  <If sap2010:Annotation.AnnotationText="If the confidence of each field in NPWP is less than 0.95, the document will be validated by the user in the action center." Condition="[NPWPDocumentData.Data.Alamat.Confidence &lt; 0.99 AndAlso NPWPDocumentData.Data.NIK.Confidence &lt; 0.99  AndAlso NPWPDocumentData.Data.Nama.Confidence &lt; 0.99  AndAlso NPWPDocumentData.Data.NPWP.Confidence &lt; 0.99]" sap:VirtualizedContainerService.HintSize="500.8,1565.6" sap2010:WorkflowViewState.IdRef="If_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
                       <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,1003.2" sap2010:WorkflowViewState.IdRef="Sequence_24">
                         <Sequence.Variables>
@@ -534,30 +550,30 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="467.2,356.8" sap2010:WorkflowViewState.IdRef="Sequence_25">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="sd:DataSet">[NPWPDataSet]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="sd:DataSet">[NPWPDocumentData.Properties.ExtractionResult.AsDataSet(False)]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:AppendRange sap2010:Annotation.AnnotationText="Add the 'NPWPDataSet' to the 'NPWP' sheet inside the 'ExtractionResultExcel' file." DataTable="[NPWPDataSet.Tables(0)]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="433.6,183.2" sap2010:WorkflowViewState.IdRef="AppendRange_3" SheetName="NPWP" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:AppendRange>
                       </Sequence>
                     </If.Else>
                   </If>
-                  <Assign sap:VirtualizedContainerService.HintSize="500.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_4">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="sd:DataSet">[NPWPDataSet]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="sd:DataSet">[NPWPDocumentData.Properties.ExtractionResult.AsDataSet(False)]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <ui:AppendRange sap2010:Annotation.AnnotationText="Add the 'NPWPDataSet' to the 'NPWP' sheet inside the 'ExtractionResultExcel' file." DataTable="[NPWPDataSet.Tables(0)]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="500.8,183.2" sap2010:WorkflowViewState.IdRef="AppendRange_3" SheetName="NPWP" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:AppendRange>
                 </Sequence>
               </If.Then>
               <If.Else>

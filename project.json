@@ -10,6 +10,7 @@
     "UiPath.IntelligentOCR.Activities": "[6.22.0]",
     "UiPath.Mail.Activities": "[1.23.11]",
     "UiPath.MicrosoftOffice365.Activities": "[2.7.23]",
+    "UiPath.Persistence.Activities": "[1.5.11]",
     "UiPath.SuccessFactors.Activities": "[1.4.1]",
     "UiPath.System.Activities": "[24.11.0-preview]",
     "UiPath.Testing.Activities": "[24.10.2-preview]",
@@ -25,7 +26,7 @@
     "netFrameworkLazyLoading": false,
     "isPausable": true,
     "isAttended": false,
-    "requiresUserInteraction": true,
+    "requiresUserInteraction": false,
     "supportsPersistence": true,
     "workflowSerialization": "DataContract",
     "excludedLoggedData": [

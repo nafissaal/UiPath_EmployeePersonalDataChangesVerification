@@ -228,7 +228,7 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="826.4000000000001,2073.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="826.4000000000001,1990.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_submission" />
     </Sequence.Variables>
@@ -237,14 +237,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="587.2,203.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_submission]" DisplayName="Read range from Excel sheet and store in DataTable" sap:VirtualizedContainerService.HintSize="416,111.2" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="KTP" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]" />
-    </Sequence>
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_submission]" DisplayName="Read range from Excel sheet and store in DataTable" sap:VirtualizedContainerService.HintSize="587.2,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="KTP" WorkbookPath="[String.Format(&quot;ExtractionResultExcel\ExtractionResults{0}.xlsx&quot;, Today.ToString(&quot;MMddyyyy&quot;))]" />
     <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_submission]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="587.2,1847.2" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
