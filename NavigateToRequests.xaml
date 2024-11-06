@@ -111,7 +111,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="NavigateAndExtractInformation" sap:VirtualizedContainerService.HintSize="826.4000000000001,3161.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="NavigateAndExtractInformation" sap:VirtualizedContainerService.HintSize="826.4000000000001,3214.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="SFRequestDataTable" />
     </Sequence.Variables>
@@ -134,47 +134,54 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:WriteRange>
-    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Navigate the SuccessFactors website to extract request data and download documents." AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: SuccessFactors: Home" sap:VirtualizedContainerService.HintSize="546.4,2810.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="09f464d9-5c35-4419-a459-65cd40b2b0b2" Version="V2">
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Navigate the SuccessFactors website to extract request data and download documents." AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome SuccessFactors Home" sap:VirtualizedContainerService.HintSize="546.4,2863.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="09f464d9-5c35-4419-a459-65cd40b2b0b2" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512.8,2539.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512.8,2592" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="1" DisplayName="Click 'View All'" sap:VirtualizedContainerService.HintSize="479.2,225.6" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="09f464d9-5c35-4419-a459-65cd40b2b0b2" Version="V4">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://hcm44preview.sapsf.com/sf/home?&amp;_s.crb=Bev4ACnzYM5mVOItgZmx8c4YXGco8A166ZNOh6NNSTI%3d" CVScreenId="2fc85975-a4bd-40cf-b619-25856a9124dd" CvTextArea="97, 974, 89, 20" CvTextArgument="View All" CvType="Text" DesignTimeRectangle="79, 804, 51, 13" DesignTimeScaleFactor="1" ElementType="Text" Guid="532251f4-3349-41df-b51f-008c1bc1d710" ImageBase64="" InformativeScreenshot="133c2f5b833afaac8868bd5bb24663f8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SuccessFactors: Home' /&gt;" SearchSteps="CV" Version="V4" Visibility="Interactive" />
-              </uix:NClick.Target>
-              <uix:NClick.VerifyOptions>
-                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                  <uix:VerifyExecutionOptions.Retry>
-                    <InArgument x:TypeArguments="x:Boolean" />
-                  </uix:VerifyExecutionOptions.Retry>
-                  <uix:VerifyExecutionOptions.Timeout>
-                    <InArgument x:TypeArguments="x:Double" />
-                  </uix:VerifyExecutionOptions.Timeout>
-                </uix:VerifyExecutionOptions>
-              </uix:NClick.VerifyOptions>
-            </uix:NClick>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1" DisplayName="Click 'View All'" sap:VirtualizedContainerService.HintSize="479.2,139.2" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d059212d-9117-416d-a60f-f20c8d2ae51f" InformativeScreenshot="86e5082959e49cf3c950ace97bc091ee" Selector="&lt;webctrl aaname='View All *' tag='DIV' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479.2,176" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Click 'View All': Success&quot;]" />
-            <uix:NForEachUiElement sap2010:Annotation.AnnotationText="Iterating through the request card. A filter was applied for the card, so only cards with a particular title will be further processed." DisplayName="For Each UI Element" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='CurrentElement'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Title'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='section' idx='1' /&gt;&lt;webctrl tag='ui5-busy-indicator' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='section' idx='1' /&gt;&lt;webctrl tag='ui5-busy-indicator' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='section' idx='1' /&gt;&lt;webctrl tag='ui5-busy-indicator' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='ui5-link' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="479.2,2076" sap2010:WorkflowViewState.IdRef="NForEachUiElement_3" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="09f464d9-5c35-4419-a459-65cd40b2b0b2" Version="V4">
+            <uix:NForEachUiElement sap2010:Annotation.AnnotationText="Iterating through the request card. A filter was applied for the card, so only cards with a particular title will be further processed." DelayBefore="1" DisplayName="For Each UI Element" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='CurrentElement'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Title'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='section' idx='1' /&gt;&lt;webctrl tag='ui5-busy-indicator' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='section' idx='1' /&gt;&lt;webctrl tag='ui5-busy-indicator' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='section' idx='1' /&gt;&lt;webctrl tag='ui5-busy-indicator' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='ui5-link' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="479.2,1996.8" sap2010:WorkflowViewState.IdRef="NForEachUiElement_3" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="09f464d9-5c35-4419-a459-65cd40b2b0b2" Version="V4">
               <uix:NForEachUiElement.Body>
                 <ActivityAction x:TypeArguments="x:Int32">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1740" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1653.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="0.5" DisplayName="Click" sap:VirtualizedContainerService.HintSize="382.4,205.6" sap2010:WorkflowViewState.IdRef="NClick_6" InUiElement="[CurrentElement]" KeyModifiers="None" MouseButton="Left" Version="V4">
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="0.5" DisplayName="Click" sap:VirtualizedContainerService.HintSize="382.4,205.6" sap2010:WorkflowViewState.IdRef="NClick_6" InUiElement="[CurrentElement]" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="09f464d9-5c35-4419-a459-65cd40b2b0b2" Version="V4">
                       <uix:NClick.VerifyOptions>
                         <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
                           <uix:VerifyExecutionOptions.Retry>
@@ -207,7 +214,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:InvokeWorkflowFile>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Home Page'" sap:VirtualizedContainerService.HintSize="382.4,225.6" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="09f464d9-5c35-4419-a459-65cd40b2b0b2" Version="V4">
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="2" DisplayName="Click 'Home Page'" sap:VirtualizedContainerService.HintSize="382.4,225.6" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="09f464d9-5c35-4419-a459-65cd40b2b0b2" Version="V4">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://hcm44preview.sapsf.com/sf/hrisworkflowapprovelink?workflowRequestId=V4-0-a1-HkoY-xa8DrXOxg9GwGwBMFMh2kmEY8JhnrOZXsnpwvU&amp;prevPage=HOME&amp;company=IOHT1&amp;_s.crb=s%2fhabtSblwCuxSPShUdJxs6tYy0c1C4AlGg8prsbTZQ%3d" DesignTimeRectangle="286, 268, 90, 21" DesignTimeScaleFactor="1.25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='11_' tag='SPAN' type='' class='fd-link__content fd-link__content--compact' aaname='Home Page' check:innerText='Home Page' /&gt;" Guid="95cdfe78-f86e-409e-a102-03cf1054a458" InformativeScreenshot="083d593b266af64e10485166b593656f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Employee Files - SuccessFactors' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
                       </uix:NClick.Target>
@@ -223,21 +230,28 @@
                       </uix:NClick.VerifyOptions>
                     </uix:NClick>
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,176" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Click 'Home Page': Success&quot;]" />
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="1" DisplayName="Click 'View All'" sap:VirtualizedContainerService.HintSize="382.4,225.6" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="09f464d9-5c35-4419-a459-65cd40b2b0b2" Version="V4">
-                      <uix:NClick.Target>
-                        <uix:TargetAnchorable BrowserURL="https://hcm44preview.sapsf.com/sf/home?&amp;_s.crb=Bev4ACnzYM5mVOItgZmx8c4YXGco8A166ZNOh6NNSTI%3d" CVScreenId="2fc85975-a4bd-40cf-b619-25856a9124dd" CvTextArea="97, 974, 89, 20" CvTextArgument="View All" CvType="Text" DesignTimeRectangle="79, 804, 51, 13" DesignTimeScaleFactor="1" ElementType="Text" Guid="532251f4-3349-41df-b51f-008c1bc1d710" ImageBase64="" InformativeScreenshot="133c2f5b833afaac8868bd5bb24663f8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SuccessFactors: Home' /&gt;" SearchSteps="CV" Version="V4" Visibility="Interactive" />
-                      </uix:NClick.Target>
-                      <uix:NClick.VerifyOptions>
-                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                          <uix:VerifyExecutionOptions.Retry>
-                            <InArgument x:TypeArguments="x:Boolean" />
-                          </uix:VerifyExecutionOptions.Retry>
-                          <uix:VerifyExecutionOptions.Timeout>
-                            <InArgument x:TypeArguments="x:Double" />
-                          </uix:VerifyExecutionOptions.Timeout>
-                        </uix:VerifyExecutionOptions>
-                      </uix:NClick.VerifyOptions>
-                    </uix:NClick>
+                    <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1" DisplayName="Click 'View All'" sap:VirtualizedContainerService.HintSize="382.4,139.2" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:Click.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:Click.CursorPosition>
+                      <ui:Click.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d059212d-9117-416d-a60f-f20c8d2ae51f" InformativeScreenshot="86e5082959e49cf3c950ace97bc091ee" Selector="&lt;webctrl aaname='View All *' tag='DIV' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:Click.Target>
+                    </ui:Click>
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,168.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Click 'View All': Success&quot;]" />
                   </Sequence>
                 </ActivityAction>
@@ -253,7 +267,7 @@
                 </uuam:FilterArgument>
               </uix:NForEachUiElement.Filter>
               <uix:NForEachUiElement.Target>
-                <uix:TargetAnchorable BrowserURL="https://hcm44preview.sapsf.com/sf/home?&amp;_s.crb=Bev4ACnzYM5mVOItgZmx8c4YXGco8A166ZNOh6NNSTI%3d" DesignTimeRectangle="138, 313, 1664, 282" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl class='ViewAllDialog_cardContainer__vyxop' tag='DIV' /&gt;" Guid="e085b98a-52ee-4d10-915b-c728bae69705" InformativeScreenshot="c1278d7aebac3a996cbcfad93fd6104a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SuccessFactors: Home' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                <uix:TargetAnchorable BrowserURL="https://hcm44preview.sapsf.com/sf/home?&amp;_s.crb=Bev4ACnzYM5mVOItgZmx8c4YXGco8A166ZNOh6NNSTI%3d" ContentHash="qzuTBN-8C0mqqTgEqOi-aA" DesignTimeRectangle="138, 313, 1664, 282" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl class='ViewAllDialog_cardContainer__vyxop' tag='DIV' /&gt;" Guid="e085b98a-52ee-4d10-915b-c728bae69705" InformativeScreenshot="c1278d7aebac3a996cbcfad93fd6104a.png" Reference="Ot3Nam3sh0OzGr4YoVJYqw/-EbbjEdf8UmJPCIbA_7WlQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SuccessFactors: Home' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
               </uix:NForEachUiElement.Target>
               <uix:NForEachUiElement.Variables>
                 <Variable x:TypeArguments="ui:UiElement" Name="CurrentElement" />
@@ -275,6 +289,21 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NForEachUiElement>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SVG'" sap:VirtualizedContainerService.HintSize="479.2,218.4" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="09f464d9-5c35-4419-a459-65cd40b2b0b2" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://hcm44preview.sapsf.com/sf/home?&amp;_s.crb=RoUffw%2baJly6CugkQB0v1kawPH9o4tA9wIMWHTam5mQ%3d" CVScreenId="d10a1ee0-e56a-4750-bb62-33a098f5d2f5" CvElementArea="1830, 165, 24, 24" CvType="CloseButton" DesignTimeRectangle="1832, 167, 20, 20" DesignTimeScaleFactor="1.25" ElementType="Icon" FuzzySelectorArgument="&lt;webctrl id='closeDialogButton' tag='UI5-BUTTON' /&gt;&lt;webctrl shadowhostid='closeDialogButton' tag='UI5-ICON' /&gt;&lt;webctrl shadowhostid='' tag='svg' type='' class='ui5-icon-root' aaname='' /&gt;" Guid="5c4853fd-96b3-47e6-a6bb-b882a9ddef53" InformativeScreenshot="68cbc39dab18731eb70d265e8627a153.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SuccessFactors: Home' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>

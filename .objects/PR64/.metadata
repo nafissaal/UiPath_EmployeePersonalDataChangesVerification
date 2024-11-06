@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Chrome SuccessFactors Home",
+  "Type": "App",
+  "Id": "PR64rZjUaE2P8VR7T2FNUA",
+  "Reference": "Ot3Nam3sh0OzGr4YoVJYqw/PR64rZjUaE2P8VR7T2FNUA",
+  "Created": "2024-11-06T04:34:02.8800539Z",
+  "Updated": "2024-11-06T04:34:02.8800539Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
