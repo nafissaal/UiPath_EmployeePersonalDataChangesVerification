@@ -99,7 +99,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="LoginToSuccessFactors" sap:VirtualizedContainerService.HintSize="826.4000000000001,1476" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="LoginToSuccessFactors" sap:VirtualizedContainerService.HintSize="1224,1418" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="DestinationPath" />
       <Variable x:TypeArguments="si:FileInfo" Name="DownloadedFile" />
@@ -109,36 +109,36 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="516.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="518,113" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[DestinationPath]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">D:\ProjectUiPath\ICSTAR\EmployeeDataChangeVerification\DownloadedDocument\</InArgument>
+        <InArgument x:TypeArguments="x:String">D:\Bootcamp\ICStar Hackathon\Neo Team 1\DownloadedDocument\</InArgument>
       </Assign.Value>
     </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Employee Files - SuccessFactors" sap:VirtualizedContainerService.HintSize="516.8,1112" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="ced89d1f-0d12-492c-8483-c5239044410a" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Employee Files - SuccessFactors" sap:VirtualizedContainerService.HintSize="518,1069" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="ced89d1f-0d12-492c-8483-c5239044410a" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="483.2,863.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484,820" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:GetLastDownloadedFile FileResource="{x:Null}" IgnoreFiles="{x:Null}" Timeout="{x:Null}" sap2010:Annotation.AnnotationText="Initiate download for the document attached to the request." DisplayName="Wait for Download" DownloadFolder="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads&quot;)]" File="[DownloadedFile]" sap:VirtualizedContainerService.HintSize="449.6,638.4" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1">
+            <ui:GetLastDownloadedFile FileResource="{x:Null}" IgnoreFiles="{x:Null}" Timeout="{x:Null}" sap2010:Annotation.AnnotationText="Initiate download for the document attached to the request." DisplayName="Wait for Download" DownloadFolder="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads&quot;)]" File="[DownloadedFile]" sap:VirtualizedContainerService.HintSize="450,595" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1">
               <ui:GetLastDownloadedFile.Body>
                 <ActivityAction>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,276.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,276" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click document" sap:VirtualizedContainerService.HintSize="382.4,216.8" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ced89d1f-0d12-492c-8483-c5239044410a" Version="V4">
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click document" sap:VirtualizedContainerService.HintSize="382,216" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ced89d1f-0d12-492c-8483-c5239044410a" Version="V4">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://hcm44preview.sapsf.com/sf/hrisworkflowapprovelink?workflowRequestId=V4-0-a1-HkoY-xa8DrXOxg9GwGwBMFMh2kmEY8JhnrOZXsnpwvU&amp;prevPage=HOME&amp;company=IOHT1&amp;_s.crb=J3y0vveS3Vv1UhCGs5o43yxBxEP%2fJy2I0JP%2fEEOhz5A%3d" CVScreenId="567cd5bd-b469-448b-948e-53f0efd2f974" CvTextArea="971, 672, 148, 21" CvTextArgument="npwp_dummy.jpeg" CvType="Text" DesignTimeRectangle="1047, 683, 72, 21" DesignTimeScaleFactor="1.25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl parentid='70_' type='' tag='SPAN' class='fd-link__content fd-link__content--compact ' aaname='npwp_dummy.jpeg' /&gt;" Guid="d8f8131c-f95a-429a-a6d8-e1856df09536" ImageBase64="" InformativeScreenshot="50341fcaab43e09b39fb1af51f266ef3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Employee Files - SuccessFactors' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
                       </uix:NClick.Target>
@@ -162,7 +162,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:GetLastDownloadedFile>
-            <ui:CloseWindow TimeoutMS="{x:Null}" UseWindow="{x:Null}" sap2010:Annotation.AnnotationText="Close pop-up window." DisplayName="Close Window 'chrome.exe'" sap:VirtualizedContainerService.HintSize="449.6,163.2" sap2010:WorkflowViewState.IdRef="CloseWindow_2" InformativeScreenshot="6961803a31306e95f53b39429afd52bf" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Untitled - Google Chrome' /&gt;&lt;ctrl name='Untitled*' role='pane' /&gt;&lt;ctrl idx='2' role='pane' /&gt;" WaitForReady="INTERACTIVE">
+            <ui:CloseWindow TimeoutMS="{x:Null}" UseWindow="{x:Null}" sap2010:Annotation.AnnotationText="Close pop-up window." DisplayName="Close Window 'chrome.exe'" sap:VirtualizedContainerService.HintSize="450,163" sap2010:WorkflowViewState.IdRef="CloseWindow_2" InformativeScreenshot="6961803a31306e95f53b39429afd52bf" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Untitled - Google Chrome' /&gt;&lt;ctrl name='Untitled*' role='pane' /&gt;&lt;ctrl idx='2' role='pane' /&gt;" WaitForReady="INTERACTIVE">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -176,7 +176,7 @@
         <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHoSURBVDhPlZNLTxpRGIZHSgOLxgQSDdNu7LobVyTKxm5MrPUXsMIdcds/ULp1EjZqo2ZsBhK1hrbElg2J0IWLpiltQpCLOCpWIYjoVKQq4OuZM5dA6CT0Td7M5JzzPfNdzjD4D/E8D4ZhdJtMJvQMkCQJLpeLBtpsNgiCgHK53DsgmUyCZVkK8Hg86ioUwO9aA/mLG+SIa7ctutGuarWKQCAAs9lMAT6fD4VCAaIognFuiGBXshjksxjgMxgScpjeOqYwTW63m6at1W632+FwONSM5lL4l58GckicNSjA6XTqwd0mh+3LGTz/dIBnq/kOyHjkBLXrW3wIh+H1evUS5Iw4joPf7wfz+F0WkcNL1Bt3kG5amP1ZwWhoHyMhERObB9iVlCwSiQSsVisFhAlQE2OaT+HF50Mspc6xXbxCunqN079NdRto3SnPWCwGi8VCAcFgUFkk6urBo8U0xkg5r7+XUWkDGQIeLux0ANo9STIr1ZUSDAHFqwZW0ud4tV3Cyy8FOtK+Nsj7vUt60BDA/aqor4p2yfyfkMZqgDc/zuh6PB7vAjSbTaUHU+TLQuYCH8U/mPlaRP9SWges5Y0z0AGyH5BpWN529mN4fQ9H5JrL6nkKmuUr/q1UV48B0WiUBsuWf2tFwD0uqumWxKHnIAAAAABJRU5ErkJggg==" InformativeScreenshot="985b4ec18a86b65f2ed6ded314061d4a.jpg" Selector="&lt;html app='chrome.exe' title='Employee Files - SuccessFactors' /&gt;" Title="Employee Files - SuccessFactors" Url="https://hcm44preview.sapsf.com/sf/hrisworkflowapprovelink?workflowRequestId=V4-0-a1-HkoY-xa8DrXOxg9GwGwBMFMh2kmEY8JhnrOZXsnpwvU&amp;prevPage=HOME&amp;company=IOHT1&amp;_s.crb=J3y0vveS3Vv1UhCGs5o43yxBxEP%2fJy2I0JP%2fEEOhz5A%3d" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" sap2010:Annotation.AnnotationText="Move file from system download to the destination file." Destination="[DestinationPath+Now.ToString(&quot;dd-MM-yyyy_HHmmss&quot;)+Path.GetExtension(DownloadedFile.FullName)]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="516.8,227.2" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[DownloadedFile.FullName]">
+    <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" sap2010:Annotation.AnnotationText="Move file from system download to the destination file." Destination="[DestinationPath+Now.ToString(&quot;dd-MM-yyyy_HHmmss&quot;)+Path.GetExtension(DownloadedFile.FullName)]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="518,213" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[DownloadedFile.FullName]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>

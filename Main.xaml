@@ -52,6 +52,7 @@
       <x:String>UiPath.IntelligentOCR.StudioWeb.Activities</x:String>
       <x:String>UiPath.DocumentProcessing.Contracts</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -112,9 +113,23 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="826.4000000000001,10868.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1276,10859" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="DocumentFolderPath" />
     </Sequence.Variables>
@@ -123,7 +138,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="" DisplayName="LoginToSuccessFactors - Invoke Workflow File (LoginToSuccessFactors.xaml)" sap:VirtualizedContainerService.HintSize="635.2,237.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="LoginToSuccessFactors.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="" DisplayName="LoginToSuccessFactors - Invoke Workflow File (LoginToSuccessFactors.xaml)" sap:VirtualizedContainerService.HintSize="636,235" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="LoginToSuccessFactors.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
@@ -133,17 +148,17 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="NavigateToRequests - Invoke Workflow File (NavigateToRequests.xaml)" sap:VirtualizedContainerService.HintSize="635.2,206.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="NavigateToRequests.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="NavigateToRequests - Invoke Workflow File (NavigateToRequests.xaml)" sap:VirtualizedContainerService.HintSize="636,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="NavigateToRequests.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <Assign sap2010:Annotation.AnnotationText="Assign the folder where the document is stored to the 'DocumentFolderPath' variable." sap:VirtualizedContainerService.HintSize="635.2,157.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap2010:Annotation.AnnotationText="Assign the folder where the document is stored to the 'DocumentFolderPath' variable." sap:VirtualizedContainerService.HintSize="636,156" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="s:String[]">[DocumentFolderPath]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("D:\ProjectUiPath\ICSTAR\EmployeeDataChangeVerification\DownloadedDocument")]</InArgument>
+        <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("D:\Bootcamp\ICStar Hackathon\Neo Team 1\DownloadedDocument")]</InArgument>
       </Assign.Value>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -151,13 +166,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterate through every file inside the folder." DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="635.2,9633.6" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[DocumentFolderPath]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterate through every file inside the folder." DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="636,9631" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[DocumentFolderPath]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="601.6,9456" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="602,9454" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <Sequence.Variables>
               <Variable x:TypeArguments="upr:ILocalResource" Name="DocumentResource" />
               <Variable x:TypeArguments="uisad2:DocumentData" Name="classifiedDocument" />
@@ -167,7 +182,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:PathExists Exists="{x:Null}" sap2010:Annotation.AnnotationText="Check if the specified path of the file exists." DisplayName="Path Exists" sap:VirtualizedContainerService.HintSize="568,179.2" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[currentText]" PathType="File" Resource="[DocumentResource]">
+            <ui:PathExists Exists="{x:Null}" sap2010:Annotation.AnnotationText="Check if the specified path of the file exists." DisplayName="Path Exists" sap:VirtualizedContainerService.HintSize="568,178" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[currentText]" PathType="File" Resource="[DocumentResource]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
