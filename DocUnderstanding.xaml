@@ -118,7 +118,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="826.4000000000001,9805.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="826.4000000000001,10218.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="DocumentFolderPath" />
       <Variable x:TypeArguments="x:Int32" Name="FileIndex" />
@@ -141,7 +141,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Iterate through every file inside the folder." CurrentIndex="[FileIndex]" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="635.2,9624.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[DocumentFolderPath]">
+    <ui:ForEach x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Iterate through every file inside the folder." CurrentIndex="[FileIndex]" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="635.2,9633.6" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[DocumentFolderPath]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
@@ -595,5 +595,15 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="AddColumnNIKRequest - Invoke Workflow File (AddColumnNIKRequest.xaml)" sap:VirtualizedContainerService.HintSize="635.2,206.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="AddColumnNIKRequest.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CompareNIK - Invoke Workflow File (CompareNIK.xaml)" sap:VirtualizedContainerService.HintSize="635.2,197.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="CompareNIK.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>
